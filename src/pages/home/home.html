@@ -1,0 +1,69 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Supermodular 2</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="getting-started">
+	<div class="home-hello">
+		<img src="http://lorempixel.com/600/480/city" />
+
+		<div class="hello-title" text-wrap>
+			<h1>Welcome!</h1>
+			Get started today with personalised messenging!
+		</div>
+	</div>
+
+	<ion-row *ngFor="let tilePair of tiles">
+		<ion-col *ngFor="let tile of tilePair">
+			<ion-card class="tile" (click)="navigateTo(tile)">
+				<ion-card-content>
+					<ion-item>
+						<h1><ion-icon [name]="tile.icon"></ion-icon></h1>
+						<h2>{{tile.title}}</h2>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="callUs()">
+			<ion-card-content>
+				<ion-icon name="phone-portrait"></ion-icon>
+				<span>Don't Call us</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="sendEmail()">
+			<ion-card-content>
+				<ion-icon name="mail"></ion-icon>
+				<span>Don't Send us an Email</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="getDirections()">
+			<ion-card-content>
+				<ion-icon name="compass"></ion-icon>
+				<span>Don't Find us / Don't Get directions</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="openFacebookPage()">
+			<ion-card-content>
+				<ion-icon name="logo-facebook"></ion-icon>
+				<span>Don't Visit us on Facebook</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+</ion-content>
